@@ -1,0 +1,143 @@
+<!-- Floating Donate Button -->
+<div class="floating-donate" (mouseenter)="donateHovered = true" (mouseleave)="donateHovered = false">
+  <button class="donate-floating-btn" [ngClass]="{ hovered: donateHovered }">
+    <i class="fas fa-heart"></i>
+    <span class="donate-text">DONATE NOW</span>
+  </button>
+</div>
+
+<!-- Main Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Footer Content Grid -->
+    <div class="footer-content">
+      <!-- Contact Details Section -->
+      <div class="footer-section contact-section">
+        <h3 class="section-title">
+          <i class="fas fa-phone-alt"></i>
+          Contact Details
+        </h3>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+447726646211">+44 7726 646211</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+443000021003">+44 300 0021003</a>
+        </div>
+        <div class="contact-group">
+          <h4>
+            <i class="fas fa-building"></i>
+            Charity Details
+          </h4>
+          <p><strong>ELIYA FOUNDATION TRUST</strong></p>
+          <p>Charity Number: 1208572</p>
+          <p>113 West End Building<br />Albert Road, Colne<br />BB8 0BT</p>
+        </div>
+      </div>
+
+      <!-- Pages Section -->
+      <div class="footer-section pages-section">
+        <h3 class="section-title">
+          <i class="fas fa-sitemap"></i>
+          Pages
+        </h3>
+        <nav class="footer-nav">
+          <a href="/" class="footer-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="/about-us" class="footer-link">
+            <i class="fas fa-info-circle"></i>
+            <span>About us</span>
+          </a>
+          <a href="/projects" class="footer-link">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+          </a>
+          <a href="#" class="footer-link">
+            <i class="fas fa-handshake"></i>
+            <span>Donate</span>
+          </a>
+          <a href="#" class="footer-link">
+            <i class="fas fa-shield-alt"></i>
+            <span>Privacy Policy</span>
+          </a>
+          <a href="/contact-us" class="footer-link">
+            <i class="fas fa-envelope"></i>
+            <span>Contact us</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- About Section -->
+      <div class="footer-section about-section">
+        <h3 class="section-title">
+          <i class="fas fa-heart"></i>
+          About Us
+        </h3>
+        <p class="about-text">
+          Welcome to Eliya Foundation Trust, where our mission is to make a positive impact both
+          locally in the UK and internationally, with a special focus on supporting communities in
+          Palestine. We believe in the transformative power of compassion and generosity to improve
+          lives and make the world a better place for all.
+        </p>
+        <div class="social-links-footer">
+          <a href="#" title="Facebook" class="social-link" (mouseenter)="activeSocial = 'facebook'" (mouseleave)="activeSocial = null">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" title="Twitter" class="social-link" (mouseenter)="activeSocial = 'twitter'" (mouseleave)="activeSocial = null">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" title="LinkedIn" class="social-link" (mouseenter)="activeSocial = 'linkedin'" (mouseleave)="activeSocial = null">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" title="Instagram" class="social-link" (mouseenter)="activeSocial = 'instagram'" (mouseleave)="activeSocial = null">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Subscribe Section -->
+      <div class="footer-section subscribe-section">
+        <h3 class="section-title">
+          <i class="fas fa-bell"></i>
+          Subscribe
+        </h3>
+        <p class="subscribe-text">Get updates about our latest projects and initiatives.</p>
+        <form class="subscribe-form" (ngSubmit)="onSubscribe()">
+          <div class="input-group">
+            <input
+              type="email"
+              class="email-input"
+              placeholder="Your email"
+              [(ngModel)]="emailInput"
+              name="email"
+              required
+            />
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i>
+              <span>Submit</span>
+            </button>
+          </div>
+          <p class="form-message" *ngIf="subscribeMessage" [ngClass]="subscribeSuccess ? 'success' : 'error'">
+            {{ subscribeMessage }}
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-container">
+      <p class="copyright">
+        <i class="fas fa-copyright"></i>
+        2026 Eliya Foundation Trust. All rights reserved.
+      </p>
+      <a href="#top" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </div>
+  </div>
+</footer>

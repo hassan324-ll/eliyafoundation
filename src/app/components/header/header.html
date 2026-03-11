@@ -1,0 +1,59 @@
+<!-- Top Info Bar -->
+<div class="header-top">
+  <div class="header-top-container">
+    <div class="header-top-left">
+      <div class="contact-info">
+        <i class="fas fa-phone"></i>
+        <span>+447726646211 +443000021003</span>
+      </div>
+      <div class="contact-info">
+        <i class="fas fa-envelope"></i>
+        <span>info@eliyafoundationtrust.org</span>
+      </div>
+    </div>
+    <div class="header-top-right">
+      <div class="social-links">
+        <a href="#" title="Facebook" class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" title="Twitter" class="social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" title="LinkedIn" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" title="Instagram" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navigation Bar -->
+<nav class="header-main">
+  <div class="header-main-container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="/eliyafoundationlogo.png" alt="Eliya Foundation Trust Logo" class="logo-img">
+      <!-- <span>Eliya Foundation Trust</span> -->
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="nav-menu" [ngClass]="{ active: mobileMenuOpen }">
+      <li><a href="/" class="nav-link" (click)="closeMobileMenu()">Home</a></li>
+      <li><a href="/about-us" class="nav-link" (click)="closeMobileMenu()">About us</a></li>
+      <li><a href="/projects" class="nav-link" (click)="closeMobileMenu()">Projects</a></li>
+      <li><a href="/contact-us" class="nav-link" (click)="closeMobileMenu()">Contact us</a></li>
+      <li><a href="#" class="donate-btn" (click)="closeMobileMenu()">
+        <i class="fas fa-heart"></i>
+        DONATE NOW
+      </a></li>
+    </ul>
+
+    <!-- Mobile Toggle Button -->
+    <div class="mobile-toggle" (click)="toggleMobileMenu()">
+      <i class="fas" [ngClass]="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+    </div>
+  </div>
+</nav>
