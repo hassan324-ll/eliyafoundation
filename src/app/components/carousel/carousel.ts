@@ -16,8 +16,6 @@ export type CarouselFeature = {
 })
 export class Carousel {
   activeIndex = 0;
-  trackIndex = 0;
-  transitionEnabled = true;
   progressValues: number[] = [];
   progressTimer: ReturnType<typeof setInterval> | null = null;
 
@@ -35,14 +33,11 @@ export class Carousel {
       bgImage: '/./carouselimg3.avif',
     },
   ];
-  displaySlides: CarouselFeature[] = [];
-
   getSlideBackground(imagePath: string): string {
     return `linear-gradient(rgba(7, 12, 18, 0.62), rgba(7, 12, 18, 0.62)), url('${imagePath}')`;
   }
 
   ngOnInit(): void {
-    this.displaySlides = [...this.features, this.features[0]];
     this.progressValues = this.features.map(() => 0);
     this.startProgress();
   }
@@ -52,34 +47,14 @@ export class Carousel {
   }
 
   nextSlide(): void {
-    this.trackIndex += 1;
     this.activeIndex = (this.activeIndex + 1) % this.features.length;
     this.progressValues = this.features.map(() => 0);
     this.startProgress();
   }
-
-  onTrackTransitionEnd(): void {
-    if (this.trackIndex === this.features.length) {
-      this.transitionEnabled = false;
-      this.trackIndex = 0;
-      this.activeIndex = 0;
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          this.transitionEnabled = true;
-        });
-      });
-    }
-  }
-
-  getTrackTransform(): string {
-    return `translateX(-${this.trackIndex * 100}%)`;
-  }
-
   private startProgress(): void {
     this.clearProgressTimer();
 
-    const duration = 3500;
+    const duration = 5000;
     const interval = 30;
     const step = 100 / (duration / interval);
 

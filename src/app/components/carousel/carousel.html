@@ -1,14 +1,9 @@
 <div class="carousel-container">
-  <div
-    class="carousel-track"
-    [class.no-transition]="!transitionEnabled"
-    [style.transform]="getTrackTransform()"
-    (transitionend)="onTrackTransitionEnd()"
-  >
-    <ng-container *ngFor="let feature of displaySlides; let i = index">
+  <div class="carousel-track">
+    <ng-container *ngFor="let feature of features; let i = index">
       <div
         class="feature-slide position-relative d-flex align-items-center slide-bg"
-        [class.active]="i === trackIndex"
+        [class.active]="i === activeIndex"
         [style.background-image]="getSlideBackground(feature.bgImage)"
       >
         <div class="container position-relative">
@@ -18,23 +13,23 @@
                 <div class="text-start text-md-start text-white carousel-text-block">
                   <!-- titles moved into template for manual control -->
                   <ng-container [ngSwitch]="i % features.length">
-                    <div *ngSwitchCase="0">
-                      <h1 class="display-5 fw-bold">Welcome to Eliya Foundation Trust</h1>
-                      <h4 class="h6 text-white-75">
+                    <div *ngSwitchCase="0" class="slide-content" [class.is-active]="i === activeIndex">
+                      <h1 class="slide-heading display-5 fw-bold">Welcome to Eliya Foundation Trust</h1>
+                      <h4 class="slide-subtitle h6 text-white-75">
                         We believe in the transformative power of compassion and generosity
                         to improve lives and make the world a better place for all.
                       </h4>
                     </div>
-                    <div *ngSwitchCase="1">
-                      <h1 class="display-5 fw-bold">Eliya Foundation Trust</h1>
-                      <h4 class="h6 text-white-75">
+                    <div *ngSwitchCase="1" class="slide-content" [class.is-active]="i === activeIndex">
+                      <h1 class="slide-heading display-5 fw-bold">Eliya Foundation Trust</h1>
+                      <h4 class="slide-subtitle h6 text-white-75">
                         Our mission is to make a positive impact both locally in the UK and
                         internationally, with a special focus on supporting communities in Palestine.
                       </h4>
                     </div>
-                    <div *ngSwitchCase="2">
-                      <h1 class="display-5 fw-bold">Support Our Humanitarian Efforts</h1>
-                      <h4 class="h6 text-white-75">
+                    <div *ngSwitchCase="2" class="slide-content" [class.is-active]="i === activeIndex">
+                      <h1 class="slide-heading display-5 fw-bold">Support Our Humanitarian Efforts</h1>
+                      <h4 class="slide-subtitle h6 text-white-75">
                         Help us raise funds for crucial medical equipment and resources for
                         hospitals and clinics in Palestine.
                       </h4>

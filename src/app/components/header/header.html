@@ -34,10 +34,10 @@
 <nav class="header-main">
   <div class="header-main-container">
     <!-- Logo -->
-    <div class="logo">
+    <a class="logo" routerLink="/" (click)="closeMobileMenu()">
       <img src="/eliyafoundationlogo.png" alt="Eliya Foundation Trust Logo" class="logo-img">
       <!-- <span>Eliya Foundation Trust</span> -->
-    </div>
+    </a>
 
     <!-- Navigation Menu -->
     <ul class="nav-menu" [ngClass]="{ active: mobileMenuOpen }">
