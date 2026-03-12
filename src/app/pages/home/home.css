@@ -149,13 +149,42 @@
 
 /* bottom banner */
 .bottom-banner {
-  background: #f59e0b;
-  color: #1f2937;
+  position: relative;
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+  color: white;
   text-align: center;
   font-size: 1.8rem;
   font-weight: 600;
   padding: 4px 0;
   margin-top: 60px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+/* create angled layered effect */
+.bottom-banner::before,
+.bottom-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  transform-origin: center;
+  z-index: -1;
+}
+
+/* lighter overlay slant */
+.bottom-banner::before {
+  transform: skewY(-3deg) translateY(-10%);
+  opacity: 0.85;
+}
+
+/* darker underlay slant */
+.bottom-banner::after {
+  transform: skewY(3deg) translateY(10%);
+  opacity: 0.7;
 }
 
 /* animations */
