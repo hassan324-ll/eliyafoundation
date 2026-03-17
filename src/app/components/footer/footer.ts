@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -15,6 +16,8 @@ export class Footer {
   subscribeSuccess: boolean = false;
   donateHovered: boolean = false;
   activeSocial: string | null = null;
+
+  constructor(private router: Router) {}
 
   onSubscribe(): void {
     if (!this.emailInput.trim()) {
@@ -40,6 +43,15 @@ export class Footer {
     setTimeout(() => {
       this.subscribeMessage = '';
     }, 5000);
+  }
+
+  navigateToDonate(): void {
+    this.router.navigate(['/donate']);
+  }
+
+  scrollToTop(event: Event): void {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
 

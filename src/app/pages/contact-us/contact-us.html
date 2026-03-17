@@ -3,105 +3,126 @@
   <div class="about-banner__content">
     <h1>Contact Us</h1>
     <p>
-      Get in touch with Eliya Foundation Trust to learn more about our work, volunteer opportunities, or how you can contribute to our humanitarian efforts.
+      Get in touch with Eliya Foundation Trust to learn more about our work, volunteer opportunities, or how you can contribute to
+      our humanitarian efforts.
     </p>
   </div>
 </section>
 
 <section class="contact-section">
-  <div class="contact-container">
-    <div class="contact-form">
-      <div class="contact-form__bubbles" aria-hidden="true">
-        <span class="bubble bubble-1"></span>
-        <span class="bubble bubble-2"></span>
-        <span class="bubble bubble-3"></span>
+  <div class="contact-surface">
+    <div class="contact-panel">
+      <div class="contact-panel__header">
+        <!-- <p class="contact-panel__eyebrow">Contact Information</p> -->
+        <h2>Contact Information</h2>
+        <p class="contact-panel__subhead">
+          We’re here to answer questions about our work, volunteer opportunities, and partnerships.
+        </p>
       </div>
-      <h2>Send Us a Message</h2>
-      <form class="form">
-        <div class="form-group">
-          <label for="fullName">
-            <i class="fas fa-user"></i> Full Name
+      <div class="contact-panel__list">
+        <article class="contact-panel__item">
+          <span class="contact-panel__icon">
+            <i class="fas fa-phone-alt"></i>
+          </span>
+          <div>
+            <p class="contact-panel__label">Phone</p>
+            <p class="contact-panel__value">+44 300 0021003 +447726646211</p>
+          </div>
+        </article>
+        <article class="contact-panel__item">
+          <span class="contact-panel__icon">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <div>
+            <p class="contact-panel__label">Email</p>
+            <p class="contact-panel__value"> info@eliyafoundationtrust.org</p>
+          </div>
+        </article>
+        <article class="contact-panel__item">
+          <span class="contact-panel__icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+          <div>
+            <p class="contact-panel__label">Address</p>
+            <p class="contact-panel__value">
+         113 West End Building, Albert Road, Colne, BB8 0BT
+            </p>
+          </div>
+        </article>
+      </div>
+      <div class="contact-panel__socials">
+        <a href="#" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+      </div>
+    </div>
+    <div class="contact-panel__form">
+      <h3>Send Us a Message</h3>
+      <form class="form-grid">
+        <div class="form-row">
+          <label for="firstName">
+            First Name
+            <input type="text" id="firstName" name="firstName" required />
           </label>
-          <input type="text" id="fullName" name="fullName" required>
+          <label for="lastName">
+            Last Name
+            <input type="text" id="lastName" name="lastName" required />
+          </label>
         </div>
-        <div class="form-group">
-          <label for="email">
-            <i class="fas fa-envelope"></i> Email
+        <label for="email">
+          Email
+          <input type="email" id="email" name="email" required />
+        </label>
+        <label for="phone">
+          Phone Number
+          <input type="tel" id="phone" name="phone" required />
+        </label>
+        <div class="subject-options">
+          <p>Select Subject</p>
+          <label>
+            <input type="radio" name="subject" value="general" checked />
+            General Inquiry
           </label>
-          <input type="email" id="email" name="email" required>
+          <label>
+            <input type="radio" name="subject" value="partnership" />
+            Partnership
+          </label>
+          <label>
+            <input type="radio" name="subject" value="volunteer" />
+            Volunteer Support
+          </label>
         </div>
-        <div class="form-group">
-          <label for="phone">
-            <i class="fas fa-phone"></i> Phone Number
-          </label>
-          <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-          <label for="message">
-            <i class="fas fa-comment"></i> Message
-          </label>
+        <label for="message">
+          Message
           <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">
-          <i class="fas fa-paper-plane"></i> Send Message
+        </label>
+        <button type="submit" class="cta-btn">
+          <span>Send Message</span>
+          <i class="fas fa-arrow-right"></i>
         </button>
       </form>
     </div>
-    <div class="contact-details">
-      <div class="contact-details__bubbles" aria-hidden="true">
-        <span class="bubble bubble-1"></span>
-        <span class="bubble bubble-2"></span>
-        <span class="bubble bubble-3"></span>
-      </div>
-      <h2>Get In Touch</h2>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fas fa-map-marker-alt"></i>
-        </div>
-        <div class="contact-text">
-          <h3>Address</h3>
-          <p>123 Charity Lane, London, UK</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fas fa-envelope"></i>
-        </div>
-        <div class="contact-text">
-          <h3>Email</h3>
-          <p>info@eliyafoundationtrust.org</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fas fa-phone"></i>
-        </div>
-        <div class="contact-text">
-          <h3>Phone</h3>
-          <p>+44 20 1234 5678</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fas fa-clock"></i>
-        </div>
-        <div class="contact-text">
-          <h3>Office Hours</h3>
-          <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
-        </div>
-      </div>
-    </div>
   </div>
+</section>
 
-  <div class="contact-map-full">
+<section class="contact-map-panel">
+  <div class="contact-map-panel__content">
+    <h3>Visit Our Office</h3>
+    <p>113 West End Building, Albert Road, Colne, BB8 0BT</p>
+  </div>
+  <div class="contact-map-wrapper">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.907!2d-0.127647!3d51.507351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b2f2c1f0d1d%3A0x9c2c5b5b5b5b5b5b!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1630000000000!5m2!1sen!2s"
-      width="100%"
-      height="100%"
-      style="border:0;"
-      allowfullscreen=""
+      title="Eliya Foundation Trust Office Location"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.032230752528!2d-2.1740615!3d53.8596041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b922e5952cdd5%3A0x6abd93876ec88ed9!2s113%20Albert%20Rd%2C%20Colne%20BB8%200BT!5e0!3m2!1sen!2suk!4v1710676400000!5m2!1sen!2suk&maptype=satellite"
       loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen=""
+    ></iframe>
   </div>
 </section>

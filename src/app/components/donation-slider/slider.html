@@ -1,0 +1,52 @@
+<section class="donation-slider">
+  <div class="slider-inner">
+    <button
+      class="slider-nav prev"
+      type="button"
+      aria-label="Previous project"
+      [disabled]="currentPage === 0"
+      (click)="prev()"
+    >
+      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+    </button>
+
+    <div class="slider-track-wrap" #sliderWrapper>
+      <div class="slider-track" #sliderTrack>
+        <article *ngFor="let card of sliderCards" class="slider-card">
+          <div class="slider-card__media" [style.backgroundImage]="gradientBackground(card.imageUrl)">
+            <div class="slider-card__text">
+              <h3>{{ card.title }}</h3>
+              <p class="slider-card__description">{{ card.description }}</p>
+              <button class="slider-card__donate" type="button" aria-label="Donate to this project">
+                Donate now
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <button
+      class="slider-nav next"
+      type="button"
+      aria-label="Next project"
+      [disabled]="currentPage >= pageCount - 1"
+      (click)="next()"
+    >
+      <i class="fas fa-chevron-right" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="slider-pagination" aria-label="Slider pages">
+    <button
+      *ngFor="let page of paginationIndexes; index as idx"
+      type="button"
+      class="slider-pagination__item"
+      [class.active]="idx === currentPage"
+      (click)="goToPage(idx)"
+    >
+      {{ idx + 1 }}
+    </button>
+  </div>
+</section>

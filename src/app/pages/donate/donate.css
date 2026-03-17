@@ -1,0 +1,107 @@
+:host {
+  display: block;
+}
+
+.about-banner {
+  position: relative;
+  width: 100%;
+  min-height: 56vh;
+  background: linear-gradient(135deg, rgba(4, 21, 35, 0.9), rgba(9, 86, 48, 0.7)),
+    url('/contactusbanner.avif')
+      center/cover no-repeat;
+  display: grid;
+  place-items: center;
+  color: white;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.about-banner__content {
+  max-width: 920px;
+  z-index: 1;
+}
+
+.about-banner h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.about-banner p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: justify;
+}
+
+
+
+.about-body {
+  padding: 4rem 1.5rem;
+  background: #f8fafc;
+}
+
+.about-body__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+}
+
+.about-body__intro h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+  color: #2E7D32;
+}
+
+.about-body__intro p {
+  font-size: 1.1rem;
+  color: #374151;
+  max-width: 720px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.4rem;
+  border-radius: 1.2rem;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(3, 4, 7, 0.08);
+}
+
+.feature-box .icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  /* background: rgba(14, 116, 144, 0.1); */
+  display: grid;
+  place-items: center;
+  color: #E53935;
+  font-size: 22px;
+}
+
+.feature-box .feature-text h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1f2937;
+}
+
+.feature-box .feature-text p {
+  margin: 0.4rem 0 0;
+  color: #4b5563;
+  line-height: 1.6;
+  text-align: justify;
+}

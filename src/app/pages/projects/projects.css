@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 52vh;
   max-height: 520px;
-  background: url('/homesec1img.jpg') center/cover no-repeat;
+  background: url('/projectsbanner.avif') center/cover no-repeat;
   display: grid;
   place-items: center;
   color: white;
@@ -40,4 +40,5 @@
   max-width: 720px;
   margin: 0 auto;
   text-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+  text-align: justify;
 }

@@ -112,7 +112,8 @@
    MAIN FOOTER
    ================================== */
 .footer {
-  background: #0f172a;
+  /* background: #0f172a; */
+  background: black;
   color: #e5e7eb;
   padding: 60px 0 0;
   margin-top: 80px;
@@ -216,6 +217,7 @@
   font-size: 13px;
   line-height: 1.8;
   margin: 4px 0;
+  text-align: justify;
 }
 
 /* Pages Section */
@@ -307,6 +309,7 @@
   font-size: 14px;
   margin-bottom: 16px;
   line-height: 1.6;
+  text-align: justify;
 }
 
 .subscribe-form {
@@ -324,7 +327,7 @@
   flex: 1;
   padding: 12px 16px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: 1px solid #E53935;
   border-radius: 8px;
   color: white;
   font-size: 14px;
@@ -396,7 +399,8 @@
    FOOTER BOTTOM
    ================================== */
 .footer-bottom {
-  background: #0f172a;
+  /* background: #0f172a; */
+  background: black;
   border-top: 1px solid rgba(46, 125, 50, 0.4);
   padding: 24px 0;
 }

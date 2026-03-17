@@ -1,6 +1,10 @@
 <!-- Floating Donate Button -->
 <div class="floating-donate" (mouseenter)="donateHovered = true" (mouseleave)="donateHovered = false">
-  <button class="donate-floating-btn" [ngClass]="{ hovered: donateHovered }">
+  <button
+    type="button"
+    class="donate-floating-btn"
+    [ngClass]="{ hovered: donateHovered }"
+    (click)="navigateToDonate()">
     <i class="fas fa-heart"></i>
     <span class="donate-text">DONATE NOW</span>
   </button>
@@ -135,7 +139,7 @@
         <i class="fas fa-copyright"></i>
         2026 Eliya Foundation Trust. All rights reserved.
       </p>
-      <a href="#top" class="scroll-to-top">
+      <a href="#" class="scroll-to-top" (click)="scrollToTop($event)">
         <i class="fas fa-arrow-up"></i>
       </a>
     </div>

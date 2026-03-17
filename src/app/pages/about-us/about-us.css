@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 52vh;
   max-height: 520px;
-  background: url('/homesec1img.jpg') center/cover no-repeat;
+  background: url('/aboutusbanner.avif') center/cover no-repeat;
   display: grid;
   place-items: center;
   color: white;
@@ -40,6 +40,7 @@
   max-width: 720px;
   margin: 0 auto;
   text-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+  text-align: justify;
 }
 
 .about-info {
@@ -103,6 +104,7 @@
   line-height: 1.8;
   color: #334155;
   margin-bottom: 1.25rem;
+  text-align: justify;
 }
 
 .about-body {
@@ -132,6 +134,7 @@
   color: #334155;
   max-width: 720px;
   margin: 0 auto;
+  text-align: justify;
 }
 
 .about-cards {
@@ -237,6 +240,7 @@
   line-height: 1.7;
   color: #475569;
   margin: 0;
+  text-align: justify;
 }
 
 @media (max-width: 992px) {

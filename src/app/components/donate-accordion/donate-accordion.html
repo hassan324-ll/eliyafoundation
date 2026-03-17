@@ -1,0 +1,54 @@
+<section class="donate-accordion">
+  <header class="donate-accordion__heading">
+    <p>Other ways to give</p>
+  </header>
+
+  <div class="donate-accordion__cards">
+    <article
+      class="accordion-card"
+      *ngFor="let section of sections"
+      [class.open]="isSectionOpen(section.id)"
+    >
+      <button
+        class="accordion-card__header"
+        type="button"
+        (click)="toggleSection(section.id)"
+        [attr.aria-expanded]="isSectionOpen(section.id)"
+        [attr.aria-controls]="section.id + '-panel'"
+      >
+        <span class="accordion-card__header-left">
+          <span class="accordion-card__icon">
+            <i [class]="section.icon"></i>
+          </span>
+          <span class="accordion-card__title">{{ section.title }}</span>
+        </span>
+        <span class="accordion-card__chevron" [class.open]="isSectionOpen(section.id)">
+          <i class="fas fa-chevron-down"></i>
+        </span>
+      </button>
+
+      <div
+        class="accordion-card__panel"
+        [class.open]="isSectionOpen(section.id)"
+        [id]="section.id + '-panel'"
+        [attr.aria-hidden]="!isSectionOpen(section.id)"
+      >
+        <ng-container *ngIf="section.details; else descriptionBlock">
+          <div class="bank-grid">
+            <ng-container *ngFor="let detail of section.details">
+              <div class="bank-grid__label">{{ detail.label }}</div>
+              <div class="bank-grid__value">{{ detail.value }}</div>
+            </ng-container>
+          </div>
+          <p class="bank-grid__note">
+            * For international transfers please add your bank's correspondent details.
+          </p>
+        </ng-container>
+
+        <ng-template #descriptionBlock>
+          <p class="accordion-card__description">{{ section.description }}</p>
+        </ng-template>
+      </div>
+    </article>
+  </div>
+</section>
