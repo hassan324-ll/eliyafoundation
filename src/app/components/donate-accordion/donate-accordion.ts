@@ -28,12 +28,12 @@ export class DonateAccordion {
       title: 'Donate by Bank Transfer',
       icon: 'fas fa-university',
       details: [
-        { label: 'Bank', value: 'National Westminster Bank PLC' },
-        { label: 'Account name', value: 'Human Appeal' },
-        { label: 'Account number', value: '13822721' },
-        { label: 'Sort code', value: '01-08-94' },
-        { label: 'SWIFT/BIC code*', value: 'NWBKGB2L' },
-        { label: 'IBAN*', value: 'GB29NWBK01089413822721' },
+        { label: 'Bank', value: '' },
+        { label: 'Account name', value: '' },
+        { label: 'Account number', value: '' },
+        { label: 'Sort code', value: '' },
+        { label: 'SWIFT/BIC code*', value: '' },
+        { label: 'IBAN*', value: '' },
       ],
     },
     {
