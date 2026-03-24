@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface SliderCard {
@@ -14,7 +14,7 @@ interface SliderCard {
   templateUrl: './slider.html',
   styleUrls: ['./slider.css'],
 })
-export class DonationSlider implements AfterViewInit {
+export class DonationSlider implements AfterViewInit, OnInit {
   @ViewChild('sliderTrack', { static: true }) sliderTrack!: ElementRef<HTMLElement>;
   @ViewChild('sliderWrapper', { static: true }) sliderWrapper!: ElementRef<HTMLElement>;
 
@@ -63,13 +63,14 @@ export class DonationSlider implements AfterViewInit {
 
   currentPage = 0;
   cardsPerPage = 3;
+  paginationIndexes: number[] = [];
 
   get pageCount() {
     return Math.ceil(this.sliderCards.length / this.cardsPerPage);
   }
 
-  get paginationIndexes() {
-    return Array.from({ length: this.pageCount }, (_, index) => index);
+  ngOnInit() {
+    this.updatePaginationIndexes();
   }
 
   ngAfterViewInit() {
@@ -115,7 +116,12 @@ export class DonationSlider implements AfterViewInit {
     if (newCardsPerPage !== this.cardsPerPage) {
       this.cardsPerPage = newCardsPerPage;
       this.currentPage = Math.min(this.currentPage, this.pageCount - 1);
+      this.updatePaginationIndexes();
     }
+  }
+
+  private updatePaginationIndexes() {
+    this.paginationIndexes = Array.from({ length: this.pageCount }, (_, index) => index);
   }
 
   gradientBackground(imageUrl: string) {
