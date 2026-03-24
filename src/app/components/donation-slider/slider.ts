@@ -130,4 +130,8 @@ export class DonationSlider implements AfterViewInit {
       behavior: 'auto',
     });
   }
+
+  protected donate() {
+    window.location.href = "https://buy.stripe.com/test_28EdR80sK5uabBQ4Bpasg00";
+  }
 }

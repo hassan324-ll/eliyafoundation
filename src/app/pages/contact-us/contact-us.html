@@ -64,49 +64,66 @@
     </div>
     <div class="contact-panel__form">
       <h3>Send Us a Message</h3>
-      <form class="form-grid">
-        <div class="form-row">
-          <label for="firstName">
-            First Name
-            <input type="text" id="firstName" name="firstName" required />
-          </label>
-          <label for="lastName">
-            Last Name
-            <input type="text" id="lastName" name="lastName" required />
-          </label>
-        </div>
-        <label for="email">
-          Email
-          <input type="email" id="email" name="email" required />
-        </label>
-        <label for="phone">
-          Phone Number
-          <input type="tel" id="phone" name="phone" required />
-        </label>
-        <div class="subject-options">
-          <p>Select Subject</p>
-          <label>
-            <input type="radio" name="subject" value="general" checked />
-            General Inquiry
-          </label>
-          <label>
-            <input type="radio" name="subject" value="partnership" />
-            Partnership
-          </label>
-          <label>
-            <input type="radio" name="subject" value="volunteer" />
-            Volunteer Support
-          </label>
-        </div>
-        <label for="message">
-          Message
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </label>
-        <button type="submit" class="cta-btn">
-          <span>Send Message</span>
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </form>
+      <form class="form-grid" (submit)="sendEmail($event)">
+  <div class="form-row">
+    <label>
+      First Name
+      <input type="text" name="first_name" required />
+    </label>
+
+    <label>
+      Last Name
+      <input type="text" name="last_name" required />
+    </label>
+  </div>
+
+  <label>
+    Email
+    <input type="email" name="email" required />
+  </label>
+
+  <label>
+    Phone Number
+    <input type="tel" name="phone" required />
+  </label>
+
+  <div class="subject-options">
+    <p>Select Subject</p>
+
+    <label>
+      <input type="radio" name="subject" value="General Inquiry" checked />
+      General Inquiry
+    </label>
+
+    <label>
+      <input type="radio" name="subject" value="Partnership" />
+      Partnership
+    </label>
+
+    <label>
+      <input type="radio" name="subject" value="Volunteer Support" />
+      Volunteer Support
+    </label>
+  </div>
+
+  <label>
+    Message
+    <textarea name="message" rows="5" required></textarea>
+  </label>
+
+  <button type="submit" class="cta-btn" [disabled]="isLoading">
+    <span *ngIf="!isLoading">Send Message</span>
+    <span *ngIf="isLoading" class="loading-spinner">
+      <i class="fas fa-spinner fa-spin"></i>
+      Sending...
+    </span>
+  </button>
+
+  <div *ngIf="showSuccessMessage" class="success-message">
+    <i class="fas fa-check-circle"></i>
+    Message sent successfully!
+  </div>
+</form>
     </div>
   </div>
 </section>
